@@ -1,0 +1,42 @@
+ID: HANAdemo1aug
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: HDB2
+   type: hdb
+   path: HDB2
+   requires:
+    - name: hdi_HDB2_2
+
+ 
+
+
+ 
+
+resources:
+ - name: hdi_HANAdemo1aug
+   parameters:
+      config:
+         schema: HDB2
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: hdi_HDB2
+   parameters:
+      config:
+         schema: HDB2
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
+
+ - name: hdi_HDB2_2
+   parameters:
+      config:
+         schema: HDB2
+   properties:
+      hdi-container-name_3: ${service-name}
+   type: com.sap.xs.hdi-container
+
